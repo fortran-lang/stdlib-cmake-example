@@ -43,7 +43,7 @@ This project offers a ready to use integration of stdlib for CMake, including an
 Additionally, some boilerplate text in the README is available below as well as a testing setup with GitHub actions for GCC.
 The general CMake style should allow you to reuse most of the CMake build files *without* modification, just change the project name, add your source files and you are ready to go.
 
-You can [just *use this template* to create new project](https://github.com/awvwgk/stdlib-cmake-example/generate).
+You can [just *use this template* to create new project](https://github.com/fortran-lang/stdlib-cmake-example/generate).
 Remove this introduction from the README afterwards and fill in your project details.
 
 For more information on stdlib visit its [documentation](https://stdlib.fortran-lang.org).
