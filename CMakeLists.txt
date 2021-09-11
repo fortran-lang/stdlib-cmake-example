@@ -13,13 +13,12 @@ include(GNUInstallDirs)
 # General configuration information
 add_subdirectory("config")
 
-# Get the stdlib subproject
-set(lib-deps)
-add_subdirectory("subprojects")
+if(NOT TARGET "fortran_stdlib::fortran_stdlib")
+  find_package("fortran_stdlib" REQUIRED)
+endif()
 
 # Collect source of the project
 add_subdirectory("src")
-
 
 # Collect source of the application
 add_subdirectory("app")
@@ -50,3 +49,7 @@ install(
   "LICENSE"
   DESTINATION "${CMAKE_INSTALL_DATADIR}/licenses/${PROJECT_NAME}"
 )
+
+# Include test suite
+enable_testing()
+add_subdirectory("test")
