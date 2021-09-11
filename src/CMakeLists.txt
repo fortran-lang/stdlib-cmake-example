@@ -28,7 +28,7 @@ set_target_properties(
 target_link_libraries(
   "${PROJECT_NAME}-lib"
   PRIVATE
-  "${lib-deps}"
+  "fortran_stdlib::fortran_stdlib"
 )
 target_include_directories(
   "${PROJECT_NAME}-lib"

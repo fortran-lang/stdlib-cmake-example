@@ -15,15 +15,20 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   )
 endif()
 
-# Include local CMake modules
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} PARENT_SCOPE)
-
 if(WIN32)
   list(
     APPEND CMAKE_EXE_LINKER_FLAGS
     "-Wl,--allow-multiple-definition"
   )
 endif()
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" PARENT_SCOPE)
+install(
+  DIRECTORY
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/"
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+)
 
 include(CMakePackageConfigHelpers)
 configure_package_config_file(

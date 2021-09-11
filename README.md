@@ -32,6 +32,9 @@ else()
 endif()
 ```
 
+A more elaborated CMake module for making stdlib available can be found [here](config/cmake/Findfortran_stdlib.cmake).
+This module makes sure the ``fortran_stdlib::fortran_stdlib`` target is always generated regardless of how the stdlib is included in the project.
+
 You can configure stdlib by setting the appropriate options before including the subproject.
 Important options are
 
